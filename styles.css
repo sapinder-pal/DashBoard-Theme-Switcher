@@ -1,0 +1,322 @@
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+body h1,
+body h2 {
+  margin: 0;
+}
+
+body section {
+  padding: 40px 11%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .card {
+  background: #f0f2fa;
+  border: 0;
+  overflow: hidden;
+}
+
+body .card:hover {
+  background: #cfd1ec98;
+  cursor: pointer;
+}
+
+body img {
+  width: 20px;
+  height: 20px;
+}
+
+body .total-followers,
+body .switch-text,
+body .card-heading,
+body .up-change,
+body .down-change,
+body .username,
+body .followers-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6a6d77;
+}
+
+body .switch-text {
+  color: #888a91;
+}
+
+body .up-change,
+body .down-change,
+body .username,
+body .followers-text {
+  font-size: 12px;
+}
+
+body .up-change {
+  color: #1db489;
+}
+
+body .down-change {
+  color: #dc414c;
+}
+
+body .up,
+body .down {
+  width: 10px;
+  height: 5px;
+}
+
+.header {
+  background: #f5f7ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .page-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.header .switch {
+  margin-left: 10px;
+  display: inline-block;
+  width: 45px;
+  height: 22px;
+  border-radius: 20px;
+  background: #aeb3cb;
+  vertical-align: middle;
+  position: relative;
+}
+
+.header .switch .slider {
+  margin: 3px;
+  height: 16px;
+  width: 16px;
+  border-radius: 20px;
+  background: #f5f7ff;
+  position: relative;
+  -webkit-transition: all 0.2s cubic-bezier(0, 0.9, 0.99, 1);
+  transition: all 0.2s cubic-bezier(0, 0.9, 0.99, 1);
+}
+
+.header .switch:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background: linear-gradient(90deg, #378fe6, #3eda82);
+}
+
+.followers {
+  padding-top: 0;
+  padding-bottom: 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f5f7ff), color-stop(50%, #fff));
+  background: linear-gradient(#f5f7ff 50%, #fff 50%);
+  display: -ms-grid;
+  display: grid;
+  gap: 25px;
+  -ms-grid-columns: (250px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 250px);
+}
+
+.followers .card {
+  border-top: 4px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.followers .card small {
+  margin: 25px auto;
+}
+
+.followers .card small.username img {
+  margin-right: 5px;
+}
+
+.followers .card .followers-number {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.followers .card .followers-text {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+.followers .fb {
+  border-color: #198ff5;
+}
+
+.followers .twtr {
+  border-color: #1ca0f2;
+}
+
+.followers .insta {
+  border: 0;
+}
+
+.followers .insta::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  border-radius: 1rem 1rem 0 0;
+  background: -webkit-gradient(linear, left top, right top, from(#fdc468), to(#df4996));
+  background: linear-gradient(90deg, #fdc468, #df4996);
+}
+
+.followers .ytb {
+  border-color: #c4032a;
+}
+
+.overview-h2 {
+  padding: 40px 12% 0;
+  font-size: 25px;
+  font-weight: 700;
+  color: #6a6d77;
+}
+
+.overview {
+  display: -ms-grid;
+  display: grid;
+  gap: 25px;
+  -ms-grid-columns: (250px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 250px);
+}
+
+.overview .card {
+  padding: 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+}
+
+.overview .card :nth-child(2n+1) {
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.overview .card :nth-child(2n) {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.overview .card :nth-child(3),
+.overview .card :nth-child(4) {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.overview .card .overview-total {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.body-dark {
+  background: #1e202a;
+}
+
+.slider-on {
+  -webkit-transform: translateX(23px);
+          transform: translateX(23px);
+}
+
+.heading-white {
+  color: #fff !important;
+}
+
+.total-followers,
+.username,
+.card-heading,
+.followers-text {
+  color: #8b97c6 !important;
+}
+
+.header-dark {
+  background: #1f212e;
+}
+
+.followers-dark {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #1f212e), color-stop(50%, #1e202a));
+  background: linear-gradient(#1f212e 50%, #1e202a 50%);
+}
+
+.card-dark {
+  background: #252a41 !important;
+}
+
+.card-dark:hover {
+  background: #303857 !important;
+}
+
+.slide-bar {
+  height: 99%;
+  width: 3px;
+  background: rgba(239, 250, 255, 0.863);
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  -webkit-box-shadow: -3px 0 10px #acacac;
+          box-shadow: -3px 0 10px #acacac;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.slide-bar-move {
+  visibility: visible;
+  -webkit-transform: translateX(252px);
+          transform: translateX(252px);
+}
+
+@media (max-width: 670px) {
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .hr-bar {
+    width: 100%;
+    height: 5px;
+    border-color: black;
+  }
+  .switch-container {
+    position: relative;
+    width: 100%;
+  }
+  .switch-container .switch-text {
+    position: absolute;
+    left: 0;
+  }
+  .switch-container .switch {
+    position: absolute;
+    right: 0;
+    margin: 0;
+  }
+  .followers {
+    padding-top: 20px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

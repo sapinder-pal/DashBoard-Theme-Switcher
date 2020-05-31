@@ -1,0 +1,330 @@
+$primary: (lime-green: #1db489,
+    bright-red: #dc414c,
+    facebook: #198ff5,
+    twitter: #1ca0f2,
+    instagram: linear-gradient(90deg, #fdc468, #df4996),
+    youtube: #c4032a,
+    toggle-hover: linear-gradient(90deg, #378fe6, #3eda82));
+
+$light-theme: (top-bg: #f5f7ff,
+    card-bg: #f0f2fa,
+    text-greyish-blue: #888a91,
+    text-dark-blue: #6a6d77,
+    toggle: #aeb3cb,
+    card-hover: #cfd1ec98);
+
+$dark-theme: (bg: #1e202a,
+    top-bg: #1f212e,
+    card-bg: #252a41,
+    card-hover: #303857,
+    text-desat-blue: #8b97c6);
+
+@function getColor($class, $color) {
+    @return map-get($class, $color)
+}
+
+
+
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+
+    h1,
+    h2 {
+        margin: 0
+    }
+
+    section {
+        padding: 40px 11%;
+        justify-content: center;
+    }
+
+    .card {
+        background: getColor($light-theme, card-bg);
+        border: 0;
+        overflow: hidden;
+
+        &:hover {
+            background: getColor($light-theme, card-hover);
+            cursor: pointer;
+        }
+    }
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .total-followers,
+    .switch-text,
+    .card-heading,
+    .up-change,
+    //will override '.change' color later
+    .down-change,
+    .username,
+    .followers-text {
+        font-size: 14px;
+        font-weight: 700;
+        color: getColor($light-theme, text-dark-blue);
+    }
+
+    .switch-text {
+        color: getColor($light-theme, text-greyish-blue);
+    }
+
+    .up-change,
+    .down-change,
+    .username,
+    .followers-text {
+        font-size: 12px;
+    }
+
+    .up-change {
+        color: getColor($primary, lime-green);
+    }
+
+    .down-change {
+        color: getColor($primary, bright-red);
+    }
+
+    .up,
+    .down {
+        width: 10px;
+        height: 5px;
+    }
+}
+
+// HEADER SECTION
+.header {
+    background: getColor($light-theme, top-bg);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .page-title {
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .switch {
+        margin-left: 10px;
+        display: inline-block;
+        width: 45px;
+        height: 22px;
+        border-radius: 20px;
+        background: getColor($light-theme, toggle);
+        vertical-align: middle;
+        position: relative;
+
+        .slider {
+            margin: 3px;
+            height: 16px;
+            width: 16px;
+            border-radius: 20px;
+            background: getColor($light-theme, top-bg);
+            position: relative;
+            transition: all 0.2s cubic-bezier(0, 0.9, 0.99, 1);
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: getColor($primary, toggle-hover);
+        }
+    }
+
+}
+
+
+
+// FOLLOWERS SECTION
+.followers {
+    padding-top: 0;
+    padding-bottom: 0;
+    background: linear-gradient(getColor($light-theme, top-bg) 50%, #fff 50%);
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, 250px);
+
+
+
+    .card {
+        border-top: 4px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        small {
+            //username and total-change
+            margin: 25px auto;
+
+            &.username img {
+                margin-right: 5px;
+            }
+        }
+
+        .followers-number {
+            //no. of followers
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        .followers-text {
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 5px;
+        }
+    }
+
+
+
+    .fb {
+        border-color: getColor($primary, facebook);
+    }
+
+    .twtr {
+        border-color: getColor($primary, twitter);
+    }
+
+    .insta {
+        border: 0;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 4px;
+            border-radius: 1rem 1rem 0 0;
+            background: getColor($primary, instagram);
+        }
+    }
+
+    .ytb {
+        border-color: getColor($primary, youtube);
+    }
+
+
+    
+}
+
+
+
+// OVERVIEW SECTION
+.overview-h2 {
+    padding: 40px 12% 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: getColor($light-theme, text-dark-blue);
+}
+
+.overview {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit,250px);
+    
+
+
+    .card {
+        padding: 25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 20px;
+
+        //place items in corresponding corners
+        :nth-child(2n+1) {
+            justify-self: start;
+        }
+
+        :nth-child(2n) {
+            justify-self: end;
+        }
+
+        // align second row to end
+        :nth-child(3),
+        :nth-child(4) {
+            align-self: end;
+        }
+
+        .overview-total {
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+}
+
+
+// DARK THEME
+.body-dark {
+    background: getColor($dark-theme, bg);
+}
+
+.slider-on {
+    transform: translateX(23px);
+}
+
+.heading-white {
+    color: #fff !important;
+}
+
+.total-followers,
+.username,
+.card-heading,
+.followers-text {
+    color: getColor($dark-theme, text-desat-blue) !important;
+}
+
+.header-dark {
+    background: getColor($dark-theme, top-bg);
+}
+
+.followers-dark {
+    background: linear-gradient(getColor($dark-theme, top-bg) 50%, getColor($dark-theme, bg) 50%);
+}
+
+.card-dark {
+    background: getColor($dark-theme, card-bg) !important;
+
+    &:hover {
+        background: getColor($dark-theme, card-hover) !important;
+    }
+}
+
+
+
+// card-hover slidebar
+.slide-bar {
+    height: 99%;
+    width: 3px;
+    background: rgba(239, 250, 255, 0.863);
+    position: absolute; left: 0;
+    visibility: hidden;
+    box-shadow: -3px 0 10px rgb(172, 172, 172);
+    transition: all 0.4s ease-out;
+}
+.slide-bar-move {
+    visibility: visible;
+    transform: translateX(252px);
+}
+
+
+@media (max-width: 670px){
+    .header {
+        flex-direction: column;
+    }
+    .hr-bar {
+        width: 100%; height: 5px; border-color: black;
+    }
+    .switch-container {
+        position: relative;
+        width: 100%;
+        .switch-text {
+            position: absolute; left: 0;
+        }
+        .switch {
+            position: absolute; right: 0;
+            margin:0;
+        }
+    }
+    .followers {
+        padding-top: 20px;
+    }
+}

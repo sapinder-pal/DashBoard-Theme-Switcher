@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+	<title>DashBoard-Theme-Switcher | Frontend Mentor</title>
+
+	<!-- STYLES -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles.css">
+	<!-- SCRIPT -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	
+</head>
+
+<body>
+<!-- Header -->
+	<section class="header">
+		<!-- Header Text -->
+		<div class="header-text">
+			<h1 class="page-title">Social Media Dashboard</h1>
+			<small class="total-followers">Total Followers: 23,004</small>
+		</div>
+		<hr class="hr-bar">
+		<!-- Switch -->
+		<div class="switch-container">
+			<small class="switch-text">Dark Mode</small>
+			
+			<label class="switch" >
+				<div class="slider"></div>
+			</label>
+		</div>
+
+	</section>
+
+<!-- Followers -->
+	<section class="followers">
+
+		<div class="card fb">
+			<small class="username">
+				<img src="images/icon-facebook.svg" class="fb-icon" alt="fb-icon">
+				@nathanf
+			</small>
+			<h1 class="followers-number">1987</h1>
+			<h6 class="followers-text">Followers</h6>
+			<small class="up-change">
+				<img src="images/icon-up.svg" class="up" alt="up-icon">
+				12 Today
+			</small>
+		</div>
+
+		<div class="card twtr">
+			<small class="username">
+				<img src="images/icon-twitter.svg" class="twtr-icon" alt="twitter-icon">
+				@nathanf
+			</small>
+			<h1 class="followers-number">1044</h1>
+			<h6 class="followers-text">Followers</h6>
+			<small class="up-change">
+				<img src="images/icon-up.svg" class="up" alt="up-icon">
+				99 Today
+			</small>
+		</div>
+
+		<div class="card insta">			
+			<small class="username">
+				<img src="images/icon-instagram.svg" class="insta-icon" alt="instagram-icon">
+				@realnathanf
+			</small>
+			<h1 class="followers-number">11k</h1>
+			<h6 class="followers-text">Followers</h6>
+			<small class="up-change">
+				<img src="images/icon-up.svg" class="up" alt="up-icon">
+				1099 Today
+			</small>
+		</div>
+
+		<div class="card ytb">
+			<small class="username">
+				<img src="images/icon-youtube.svg" class="ytb-icon" alt="youtube-icon">
+				Nathan F.
+			</small>
+			<h1 class="followers-number">8239</h1>
+			<h6 class="followers-text">Subscribers</h6>
+			<small class="down-change">
+				<img src="images/icon-down.svg" class="down" alt="down-icon">
+				144 Today
+			</small>
+		</div>
+
+	</section>
+
+<!-- Overview -->
+	<h2 class="overview-h2">Overview - Today</h2>
+	
+	<section class="overview">
+
+		<div class="card fb-views">
+			<small class="card-heading">Page Views</small>
+			<img src="images/icon-facebook.svg" class="fb-icon" alt="fb-icon">
+			<h2 class="overview-total">87</h2>
+			<small class="up-change">
+				<img src="images/icon-up.svg" class="up" alt="up-icon">3%
+			</small>
+		</div>
+
+		<div class="card fb-likes">
+			<small class="card-heading">Likes</small>
+			<img src="images/icon-facebook.svg" class="fb-icon" alt="fb-icon">
+			<h2 class="overview-total">52</h2>
+			<small class="down-change">
+				<img src="images/icon-down.svg" class="down" alt="down-icon">2%
+			</small>
+		</div>
+
+		<div class="card insta-likes">
+			<small class="card-heading">Likes</small>
+			<img src="images/icon-instagram.svg" class="insta-icon" alt="instagram-icon">
+			<h2 class="overview-total">5462</h2>
+			<small class="up-change">
+				<img src="images/icon-up.svg" class="up" alt="up-icon">2257%
+			</small>
+		</div>
+
+		<div class="card insta-views">
+			<small class="card-heading">Profile Views</small>
+			<img src="images/icon-instagram.svg" class="insta-icon" alt="instagram-icon">
+			<h2 class="overview-total">52k</h2>
+			<small class="up-change">
+				<img src="images/icon-up.svg" class="up" alt="up-icon">1375%
+			</small>
+		</div>
+
+		<div class="card retweets">
+			<small class="card-heading">Retweets</small>
+			<img src="images/icon-twitter.svg" class="twtr-icon" alt="twitter-icon">
+			<h2 class="overview-total">117</h2>
+			<small class="up-change">
+				<img src="images/icon-up.svg" class="up" alt="up-icon">303%
+			</small>
+		</div>
+
+		<div class="card twtr-likes">
+			<small class="card-heading">Likes</small>
+			<img src="images/icon-twitter.svg" class="twtr-icon" alt="twitter-icon">
+			<h2 class="overview-total">507</h2>
+			<small class="up-change">
+				<img src="images/icon-up.svg" class="up" alt="up-icon">553%
+			</small>
+		</div>
+
+		<div class="card ytb-likes">
+			<small class="card-heading">Likes</small>
+			<img src="images/icon-youtube.svg" class="ytb-icon" alt="youtube-icon">
+			<h2 class="overview-total">107</h2>
+			<small class="down-change">
+				<img src="images/icon-down.svg" class="down" alt="down-icon">19%
+			</small>
+		</div>
+
+		<div class="card ytb-views">
+			<small class="card-heading">Total Views</small>
+			<img src="images/icon-youtube.svg" class="ytb-icon" alt="youtube-icon">
+			<h2 class="overview-total">1407</h2>
+			<small class="down-change">
+				<img src="images/icon-down.svg" class="down" alt="down-icon">12%
+			</small>
+		</div>
+
+	</section>
+
+
+
+	<script src="script.js"></script>
+</body>
+
+</html>
