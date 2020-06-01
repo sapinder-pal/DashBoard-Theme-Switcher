@@ -291,11 +291,15 @@ body .down {
 }
 
 @media (max-width: 670px) {
+  section:not(.header), .overview-h2 {
+    top: -50px !important;
+  }
   .header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-bottom: 90px;
   }
   .hr-bar {
     width: 100%;
