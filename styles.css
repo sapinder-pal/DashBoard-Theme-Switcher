@@ -15,6 +15,11 @@ body section {
           justify-content: center;
 }
 
+body section:not(.header) {
+  position: relative;
+  top: -140px;
+}
+
 body .card {
   background: #f0f2fa;
   border: 0;
@@ -70,6 +75,7 @@ body .down {
 
 .header {
   background: #f5f7ff;
+  padding-bottom: 140px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,10 +125,7 @@ body .down {
 }
 
 .followers {
-  padding-top: 0;
   padding-bottom: 0;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f5f7ff), color-stop(50%, #fff));
-  background: linear-gradient(#f5f7ff 50%, #fff 50%);
   display: -ms-grid;
   display: grid;
   gap: 25px;
@@ -189,6 +192,8 @@ body .down {
 }
 
 .overview-h2 {
+  position: relative;
+  top: -140px;
   padding: 40px 12% 0;
   font-size: 25px;
   font-weight: 700;
@@ -256,11 +261,6 @@ body .down {
 
 .header-dark {
   background: #1f212e;
-}
-
-.followers-dark {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #1f212e), color-stop(50%, #1e202a));
-  background: linear-gradient(#1f212e 50%, #1e202a 50%);
 }
 
 .card-dark {

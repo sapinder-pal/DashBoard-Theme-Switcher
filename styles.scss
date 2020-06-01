@@ -37,6 +37,12 @@ body {
     section {
         padding: 40px 10%;
         justify-content: center;
+
+        //shift everything up for followers-card background, except '.header'
+        &:not(.header){
+            position: relative;
+            top: -140px;
+        }
     }
 
     .card {
@@ -97,6 +103,7 @@ body {
 // HEADER SECTION
 .header {
     background: getColor($light-theme, top-bg);
+    padding-bottom: 140px;      //for card background
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -139,9 +146,7 @@ body {
 
 // FOLLOWERS SECTION
 .followers {
-    padding-top: 0;
     padding-bottom: 0;
-    background: linear-gradient(getColor($light-theme, top-bg) 50%, #fff 50%);
     display: grid;
     gap: 25px;
     grid-template-columns: repeat(auto-fit, 250px);
@@ -210,6 +215,7 @@ body {
 
 // OVERVIEW SECTION
 .overview-h2 {
+    position: relative;   top: -140px;
     padding: 40px 12% 0;
     font-size: 25px;
     font-weight: 700;
@@ -276,9 +282,9 @@ body {
     background: getColor($dark-theme, top-bg);
 }
 
-.followers-dark {
-    background: linear-gradient(getColor($dark-theme, top-bg) 50%, getColor($dark-theme, bg) 50%);
-}
+// .followers-dark {
+//     background: linear-gradient(getColor($dark-theme, top-bg) 50%, getColor($dark-theme, bg) 50%);
+// }
 
 .card-dark {
     background: getColor($dark-theme, card-bg) !important;
