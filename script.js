@@ -37,6 +37,7 @@ function toggleDark(){
 	$(".header").toggleClass("header-dark");
 	$(".followers").toggleClass("followers-dark");
 	$(".card").toggleClass("card-dark");
+	$(".slide-cover").toggleClass("slide-cover-dark");
 
 }
 

@@ -17,6 +17,8 @@ $dark-theme: (bg: #1e202a,
     top-bg: #1f212e,
     card-bg: #252a41,
     card-hover: #303857,
+    slide-cover-bg: #6f6f6f0a,
+    slide-cover-shadow: #1a1a1ad9,
     text-desat-blue: #8b97c6);
 
 @function getColor($class, $color) {
@@ -282,7 +284,6 @@ body {
 .slide-cover-expand {
     visibility: visible;
     height: 100%;
-    box-shadow: 0;
 }
 
 
@@ -304,7 +305,8 @@ body {
 .total-followers,
 .username,
 .card-heading,
-.followers-text {
+.followers-text,
+.attribution {
     color: getColor($dark-theme, text-desat-blue) !important;
 }
 
@@ -320,6 +322,10 @@ body {
     }
 }
 
+.slide-cover-dark {
+    background: getColor($dark-theme, slide-cover-bg);
+    box-shadow: inset -1px 0 10px getColor($dark-theme, slide-cover-shadow);
+}
 
 
 

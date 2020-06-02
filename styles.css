@@ -265,8 +265,6 @@ body .down {
 .slide-cover-expand {
   visibility: visible;
   height: 100%;
-  -webkit-box-shadow: 0;
-          box-shadow: 0;
 }
 
 .body-dark {
@@ -285,7 +283,8 @@ body .down {
 .total-followers,
 .username,
 .card-heading,
-.followers-text {
+.followers-text,
+.attribution {
   color: #8b97c6 !important;
 }
 
@@ -299,6 +298,12 @@ body .down {
 
 .card-dark:hover {
   background: #303857 !important;
+}
+
+.slide-cover-dark {
+  background: #6f6f6f0a;
+  -webkit-box-shadow: inset -1px 0 10px #1a1a1ad9;
+          box-shadow: inset -1px 0 10px #1a1a1ad9;
 }
 
 @media (max-width: 670px) {
