@@ -1,0 +1,40 @@
+@import './utilities.scss';
+
+body.dark {
+  background: getColor($dark-theme, bg);
+
+  .header__btn-slider {
+    transform: translateX(23px);
+  }
+
+  h1,
+  h2,
+  .header__theme-switcher-text {
+    color: #fff;
+  }
+
+  .header__total-followers,
+  .card--followers__username,
+  .card--overview__heading,
+  .card--followers__followers-text,
+  .attribution {
+    color: getColor($dark-theme, text-desat-blue);
+  }
+
+  .header {
+    background: getColor($dark-theme, top-bg);
+  }
+
+  .card {
+    background: getColor($dark-theme, card-bg);
+
+    &:hover {
+      background: getColor($dark-theme, card-hover);
+    }
+  }
+
+  .slide-cover {
+    background: getColor($dark-theme, slide-cover-bg);
+    box-shadow: inset -1px 0 15px getColor($dark-theme, slide-cover-shadow);
+  }
+}

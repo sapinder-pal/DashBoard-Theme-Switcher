@@ -1,0 +1,36 @@
+$primary: (lime-green: #1db489,
+  bright-red: #dc414c,
+  facebook: #198ff5,
+  twitter: #1ca0f2,
+  instagram: linear-gradient(90deg, #fdc468, #df4996),
+  youtube: #c4032a,
+  toggle-hover: linear-gradient(90deg, #378fe6, #3eda82));
+
+$light-theme: (top-bg: #f5f7ff,
+  card-bg: #f0f2fa,
+  text-greyish-blue: #888a91,
+  text-dark-blue: #6a6d77,
+  toggle: #aeb3cb,
+  card-hover: #cfd1ec98,
+  slide-cover-bg: #ffffff0a,
+  slide-cover-shadow: #d4d4d4);
+
+$dark-theme: (bg: #1e202a,
+  top-bg: #1f212e,
+  card-bg: #252a41,
+  card-hover: #303857,
+  slide-cover-bg: #0000000a,
+  slide-cover-shadow: #1a1a1a1e,
+  text-desat-blue: #8b97c6);
+
+@function getColor($class, $color) {
+  @return map-get($class, $color);
+}
+
+$regular-font: 14px;
+$small-font: 12px;
+$large-font: 28px;
+$extreme-large-font: 50px;
+
+$regular-font-weight: 700;
+$light-font-weight: 400;

@@ -1,8 +1,9 @@
+$(".header__theme-switcher-btn").click(()=> {
+	$("body").toggleClass("dark");
+});
 
-$(".switch").click(()=> toggleDark());
 
-
-let cards = $(".overview .card");
+let cards = $(".card--overview");
 let card, slideCover, cardIcon, pageTitle, overviewTotal;
 
 // add slideCover to each card
@@ -25,29 +26,13 @@ event => {
 });
 
 
-
-
-
-
-function toggleDark(){
-
-	$(".slider").toggleClass("slider-on");
-	$("body").toggleClass("body-dark");
-	$("h1, h2, .switch-text").toggleClass("heading-white");
-	$(".header").toggleClass("header-dark");
-	$(".followers").toggleClass("followers-dark");
-	$(".card").toggleClass("card-dark");
-	$(".slide-cover").toggleClass("slide-cover-dark");
-
-}
-
 function applyEffect(card){
 	pageTitle = card.children[0];
 	cardIcon = card.children[1];
 	overviewTotal = card.children[2];
 	slideCover = card.lastChild;
 
-	slideCover.classList.add("slide-cover-expand");
+	slideCover.classList.add("slide-cover--expand");
 
 	// manipulate card elements
 	cardIcon.setAttribute("style","transform: scale(2,2);");
@@ -58,15 +43,9 @@ function applyEffect(card){
 
 function removeEffect(card){
 
-	slideCover.classList.remove("slide-cover-expand");
+	slideCover.classList.remove("slide-cover--expand");
 	cardIcon.setAttribute("style","transform: scale(1,1);");
 	overviewTotal.setAttribute("style","transform: scale(1,1) translate(0,0);");
 	pageTitle.setAttribute("style","transform: translateY(0);");
 }
-
-
-
-
-
-
 

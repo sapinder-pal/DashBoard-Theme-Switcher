@@ -1,0 +1,268 @@
+@import './utilities.scss';
+@import './media.scss';
+@import './dark-theme.scss';
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+
+  * {
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+section,
+header {
+  padding: 40px 10%;
+  justify-content: center;
+}
+
+section {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, 250px);
+  //shift everything up for linear background
+  position: relative;
+  top: -140px;
+}
+
+.card {
+  background: getColor($light-theme, card-bg);
+  border: 0;
+  overflow: hidden;
+
+  &:hover {
+    background: getColor($light-theme, card-hover);
+    cursor: pointer;
+  }
+}
+
+// icons
+img {
+  width: 20px;
+  height: 20px;
+}
+
+.up-change,
+.down-change {
+  font-size: $regular-font;
+  font-weight: $regular-font-weight;
+  color: getColor($light-theme, text-dark-blue);
+}
+
+.up-change,
+.down-change {
+  font-size: $small-font;
+}
+
+.up-change {
+  color: getColor($primary, lime-green);
+}
+
+.down-change {
+  color: getColor($primary, bright-red);
+}
+
+.up,
+.down {
+  width: 10px;
+  height: 5px;
+}
+
+// HEADER
+.header {
+  background: getColor($light-theme, top-bg);
+  padding-bottom: 140px; //for card background
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    font-size: $large-font;
+    font-weight: $regular-font-weight;
+  }
+
+  &__total-followers,
+  &__theme-switcher-text {
+    font-size: $regular-font;
+    font-weight: $regular-font-weight;
+    color: getColor($light-theme, text-dark-blue);
+  }
+
+  &__theme-switcher-text {
+    color: getColor($light-theme, text-greyish-blue);
+  }
+
+  &__theme-switcher-btn {
+    margin-left: 10px;
+    display: inline-block;
+    width: 45px;
+    height: 22px;
+    border-radius: 20px;
+    background: getColor($light-theme, toggle);
+    vertical-align: middle;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      background: getColor($primary, toggle-hover);
+    }
+  }
+
+  &__btn-slider {
+    margin: 3px;
+    height: 16px;
+    width: 16px;
+    border-radius: 20px;
+    background: getColor($light-theme, top-bg);
+    position: relative;
+    transition: all 0.2s cubic-bezier(0, 0.9, 0.99, 1);
+  }
+}
+
+
+// FOLLOWERS SECTION
+.followers-section {
+  padding-bottom: 0;
+}
+
+.card--followers {
+  border-top: 4px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__username,
+  &__followers-change {
+    margin: 25px auto;
+  }
+
+  &__username,
+  &__followers-text {
+    font-size: $small-font;
+    font-weight: $regular-font-weight;
+    color: getColor($light-theme, text-dark-blue);
+  }
+
+  &__username img {
+    margin-right: 5px;
+  }
+
+  &__no-of-followers {
+    font-size: $extreme-large-font;
+  }
+
+  &__followers-text {
+    text-transform: uppercase;
+    font-weight: $light-font-weight;
+    letter-spacing: 5px;
+  }
+}
+
+.card--fb {
+  border-color: getColor($primary, facebook);
+}
+
+.card--twitter {
+  border-color: getColor($primary, twitter);
+}
+
+.card--insta {
+  border: 0;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 1rem 1rem 0 0;
+    background: getColor($primary, instagram);
+  }
+}
+
+.card--youtube {
+  border-color: getColor($primary, youtube);
+}
+
+
+// OVERVIEW SECTION
+.overview-heading {
+  position: relative;
+  top: -140px;
+  padding: 40px 12% 0;
+  font-size: $large-font;
+  font-weight: $regular-font-weight;
+  color: getColor($light-theme, text-dark-blue);
+}
+
+.card--overview {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+
+  //place items in corresponding corners
+  &__heading,
+  &__total-amount {
+    justify-self: start;
+  }
+
+  &__heading {
+    font-size: $regular-font;
+    font-weight: $regular-font-weight;
+    color: getColor($light-theme, text-dark-blue);
+  }
+
+  &__total-amount {
+    font-size: $large-font;
+    font-weight: $regular-font-weight;
+  }
+
+  // justify 2nd column to right
+  :nth-child(2n) {
+    justify-self: end;
+  }
+
+  // align second row to bottom
+  :nth-child(3),
+  :nth-child(4) {
+    align-self: end;
+  }
+}
+
+
+// ATTRIBUTION
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: relative;
+  top: -140px;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+
+
+
+// CARD EFFECTS
+.slide-cover {
+  width: 100%;
+  height: 0;
+  background: getColor($light-theme, slide-cover-bg);
+  position: absolute;
+  bottom: 0;
+  visibility: hidden;
+  box-shadow: inset -1px 0 10px getColor($light-theme, slide-cover-shadow);
+}
+
+.slide-cover--expand {
+  visibility: visible;
+  height: 100%;
+}

@@ -1,3 +1,82 @@
+@media (max-width: 670px) {
+  section:not(.header),
+  .overview-heading {
+    top: -50px !important;
+  }
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 90px;
+  }
+  .header__separator-bar {
+    width: 100%;
+    height: 5px;
+    border-color: black;
+  }
+  .header__theme-switcher {
+    position: relative;
+    width: 100%;
+  }
+  .header__theme-switcher-text {
+    position: absolute;
+    left: 0;
+  }
+  .header__theme-switcher-btn {
+    position: absolute;
+    right: 0;
+    margin: 0;
+  }
+  .followers-section {
+    padding-top: 20px;
+  }
+  .attribution {
+    top: -50px;
+  }
+}
+
+body.dark {
+  background: #1e202a;
+}
+
+body.dark .header__btn-slider {
+  -webkit-transform: translateX(23px);
+          transform: translateX(23px);
+}
+
+body.dark h1,
+body.dark h2,
+body.dark .header__theme-switcher-text {
+  color: #fff;
+}
+
+body.dark .header__total-followers,
+body.dark .card--followers__username,
+body.dark .card--overview__heading,
+body.dark .card--followers__followers-text,
+body.dark .attribution {
+  color: #8b97c6;
+}
+
+body.dark .header {
+  background: #1f212e;
+}
+
+body.dark .card {
+  background: #252a41;
+}
+
+body.dark .card:hover {
+  background: #303857;
+}
+
+body.dark .slide-cover {
+  background: #0000000a;
+  -webkit-box-shadow: inset -1px 0 15px #1a1a1a1e;
+          box-shadow: inset -1px 0 15px #1a1a1a1e;
+}
+
 body {
   font-family: "Inter", sans-serif;
   margin: 0;
@@ -8,19 +87,20 @@ body * {
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-body h1,
-body h2 {
+h1,
+h2 {
   margin: 0;
 }
 
-body section {
+section,
+header {
   padding: 40px 10%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-body section:not(.header) {
+section {
   display: -ms-grid;
   display: grid;
   gap: 25px;
@@ -30,55 +110,44 @@ body section:not(.header) {
   top: -140px;
 }
 
-body .card {
+.card {
   background: #f0f2fa;
   border: 0;
   overflow: hidden;
 }
 
-body .card:hover {
+.card:hover {
   background: #cfd1ec98;
   cursor: pointer;
 }
 
-body img {
+img {
   width: 20px;
   height: 20px;
 }
 
-body .total-followers,
-body .switch-text,
-body .card-heading,
-body .up-change,
-body .down-change,
-body .username,
-body .followers-text {
+.up-change,
+.down-change {
   font-size: 14px;
   font-weight: 700;
   color: #6a6d77;
 }
 
-body .switch-text {
-  color: #888a91;
-}
-
-body .up-change,
-body .down-change,
-body .username,
-body .followers-text {
+.up-change,
+.down-change {
   font-size: 12px;
 }
 
-body .up-change {
+.up-change {
   color: #1db489;
 }
 
-body .down-change {
+.down-change {
   color: #dc414c;
 }
 
-body .up,
-body .down {
+.up,
+.down {
   width: 10px;
   height: 5px;
 }
@@ -101,12 +170,22 @@ body .down {
           align-items: center;
 }
 
-.header .page-title {
+.header__title {
   font-size: 28px;
   font-weight: 700;
 }
 
-.header .switch {
+.header__total-followers, .header__theme-switcher-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6a6d77;
+}
+
+.header__theme-switcher-text {
+  color: #888a91;
+}
+
+.header__theme-switcher-btn {
   margin-left: 10px;
   display: inline-block;
   width: 45px;
@@ -117,7 +196,13 @@ body .down {
   position: relative;
 }
 
-.header .switch .slider {
+.header__theme-switcher-btn:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background: linear-gradient(90deg, #378fe6, #3eda82);
+}
+
+.header__btn-slider {
   margin: 3px;
   height: 16px;
   width: 16px;
@@ -128,17 +213,11 @@ body .down {
   transition: all 0.2s cubic-bezier(0, 0.9, 0.99, 1);
 }
 
-.header .switch:hover {
-  cursor: pointer;
-  background: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
-  background: linear-gradient(90deg, #378fe6, #3eda82);
-}
-
-.followers {
+.followers-section {
   padding-bottom: 0;
 }
 
-.followers .card {
+.card--followers {
   border-top: 4px solid;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -152,37 +231,43 @@ body .down {
           align-items: center;
 }
 
-.followers .card small {
+.card--followers__username, .card--followers__followers-change {
   margin: 25px auto;
 }
 
-.followers .card small.username img {
+.card--followers__username, .card--followers__followers-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6a6d77;
+}
+
+.card--followers__username img {
   margin-right: 5px;
 }
 
-.followers .card .followers-number {
+.card--followers__no-of-followers {
   font-size: 50px;
 }
 
-.followers .card .followers-text {
+.card--followers__followers-text {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 5px;
 }
 
-.followers .fb {
+.card--fb {
   border-color: #198ff5;
 }
 
-.followers .twtr {
+.card--twitter {
   border-color: #1ca0f2;
 }
 
-.followers .insta {
+.card--insta {
   border: 0;
 }
 
-.followers .insta::before {
+.card--insta::before {
   content: "";
   width: 100%;
   height: 4px;
@@ -191,20 +276,20 @@ body .down {
   background: linear-gradient(90deg, #fdc468, #df4996);
 }
 
-.followers .ytb {
+.card--youtube {
   border-color: #c4032a;
 }
 
-.overview-h2 {
+.overview-heading {
   position: relative;
   top: -140px;
   padding: 40px 12% 0;
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 700;
   color: #6a6d77;
 }
 
-.overview .card {
+.card--overview {
   padding: 25px;
   display: -ms-grid;
   display: grid;
@@ -213,27 +298,32 @@ body .down {
   row-gap: 20px;
 }
 
-.overview .card .card-heading,
-.overview .card .overview-total {
+.card--overview__heading, .card--overview__total-amount {
   -ms-grid-column-align: start;
       justify-self: start;
 }
 
-.overview .card :nth-child(2n) {
+.card--overview__heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6a6d77;
+}
+
+.card--overview__total-amount {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.card--overview :nth-child(2n) {
   -ms-grid-column-align: end;
       justify-self: end;
 }
 
-.overview .card :nth-child(3),
-.overview .card :nth-child(4) {
+.card--overview :nth-child(3),
+.card--overview :nth-child(4) {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
-}
-
-.overview .card .overview-total {
-  font-size: 30px;
-  font-weight: 700;
 }
 
 .attribution {
@@ -247,10 +337,6 @@ body .down {
   color: #3e52a3;
 }
 
-.attribution a:hover {
-  text-decoration: none;
-}
-
 .slide-cover {
   width: 100%;
   height: 0;
@@ -262,85 +348,8 @@ body .down {
           box-shadow: inset -1px 0 10px #d4d4d4;
 }
 
-.slide-cover-expand {
+.slide-cover--expand {
   visibility: visible;
   height: 100%;
 }
-
-.body-dark {
-  background: #1e202a;
-}
-
-.slider-on {
-  -webkit-transform: translateX(23px);
-          transform: translateX(23px);
-}
-
-.heading-white {
-  color: #fff !important;
-}
-
-.total-followers,
-.username,
-.card-heading,
-.followers-text,
-.attribution {
-  color: #8b97c6 !important;
-}
-
-.header-dark {
-  background: #1f212e;
-}
-
-.card-dark {
-  background: #252a41 !important;
-}
-
-.card-dark:hover {
-  background: #303857 !important;
-}
-
-.slide-cover-dark {
-  background: #6f6f6f0a;
-  -webkit-box-shadow: inset -1px 0 10px #1a1a1ad9;
-          box-shadow: inset -1px 0 10px #1a1a1ad9;
-}
-
-@media (max-width: 670px) {
-  section:not(.header),
-  .overview-h2 {
-    top: -50px !important;
-  }
-  .header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding-bottom: 90px;
-  }
-  .hr-bar {
-    width: 100%;
-    height: 5px;
-    border-color: black;
-  }
-  .switch-container {
-    position: relative;
-    width: 100%;
-  }
-  .switch-container .switch-text {
-    position: absolute;
-    left: 0;
-  }
-  .switch-container .switch {
-    position: absolute;
-    right: 0;
-    margin: 0;
-  }
-  .followers {
-    padding-top: 20px;
-  }
-  .attribution {
-    top: -50px;
-  }
-}
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=index.css.map */
