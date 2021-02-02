@@ -1,5 +1,4 @@
 @import './utilities.scss';
-@import './media.scss';
 @import './dark-theme.scss';
 
 body {
@@ -266,3 +265,5 @@ img {
   visibility: visible;
   height: 100%;
 }
+
+@import './media.scss';
